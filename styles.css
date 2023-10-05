@@ -1,0 +1,156 @@
+body{
+    background-color: cornflowerblue;
+}
+
+.weather {
+    margin: 20px; /* Adding margin */
+    padding: 20px; /* Adding padding */
+    border: none; /* Adding a border */
+    border-radius: 10px; /* Adding curved edges */
+    font-size: 150%;
+    background-image: url(images/background-1.jpg);
+    background-size: cover;
+}
+
+.weather > div {
+    margin: 10px; /* Adjust margin between sub-divs */
+}  
+
+.weather-2-1{
+    display: flex;
+    align-items: center; /* Centers items vertically */
+    height: 5vh; /* Adjust the height as needed */
+    margin: 10px;
+    padding: 10px;
+}
+
+.weather-2-1 > div{
+    width: 20%;
+}
+
+#search-weather-2-1{
+    width: 100%;
+}
+
+#search-weather-2-1 > div{
+    width: 40%;
+}
+
+.weather-3{
+    display: flex;
+}
+
+.weather-3 > div{
+    width: 20%;
+}
+
+
+#search {
+    display: flex;
+    justify-content: flex-start;
+    height: 30px;
+    align-items: center;
+    margin: 20px; /* Adding margin */
+    padding: 20px; /* Adding padding */
+    border: none; /* Adding a border */
+    border-radius: 10px; /* Adding curved edges */
+    font-size: 30px;
+    background-color: #fff;
+}
+
+#city-input {
+    width: 20%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none; /* Remove the default input outline */
+    margin-right: 5px;
+}
+
+input[type="button"] {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#search-btn:hover {
+    background-color: #0056b3;
+}
+
+#search-weather > div {
+    display: inline;
+    margin: 0 10px; /* Add some margin between the inline elements */
+}
+
+#search-weather-content > #search-weather-1{
+    height: 33%;
+    text-align: justify;
+}
+
+#search-weather-content > #search-weather-2{
+    height: 33%;
+    text-align: justify;
+}
+
+table{
+    width: 100%;
+}
+
+td{
+    text-align: center;
+    border-bottom: 1px solid rgb(46, 46, 46);
+}
+
+#search-weather-image{
+    width: 5%;
+    height: auto;
+}
+
+/* Style for the popup container */
+.popup {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 30%;
+    width: 35%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the popup content */
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+/* Style for the close button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Style for the button to open the popup */
+#openPopupButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#openPopupButton:hover {
+    background-color: #0056b3;
+}

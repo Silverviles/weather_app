@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    
+    <div id="search">
+        <input type="text" id="city-input" placeholder="Enter your city">
+        <input type="button" id="search-btn" value="Search">
+        <input type="button" id="subscribe-btn" value="Subscribe">
+        <input type="button" id="send-emails-btn" value="Send Emails" onclick="sendEmails()">
+    </div>
+
+    <div id="weather" class="weather" style="display: none;">
+        <div id="weather-1" class="weather-1">
+            <label>Current Weather</label><br>
+            <label id="time">Time</label>
+        </div>
+        <div id="weather-2" class="weather-2">
+            <div id="weather-2-1" class="weather-2-1">
+                <img src="" alt="Current Weather Image" id="weather-image" class="weather-image">
+                <div id="weather-temp" class="weather-temp" style="margin-bottom: 10px;">Temperature</div>
+                <div>
+                    <div id="weather-des" class="weather-des">Mostly Cloudy</div>
+                    <div id="weather-feel-like" class="weather-feel-like">Feels like</div>
+                </div>
+            </div>
+        </div>
+        <div id="weather-3" class="weather-3">
+            <div id="weather-wind" class="weather-wind">Wind</div>
+            <div id="weather-humidity" class="weather-humidity">Humidity</div>
+            <div id="weather-visibility" class="weather-visibility">Visibility</div>
+            <div id="weather-pressure" class="weather-pressure">Pressure</div>
+            <div id="weather-cloudiness" class="weather-cloudiness">Cloudy</div>
+        </div>
+    </div>    
+    
+    <div id="search-weather" class="weather" style="display: none; height: 30%px;">
+        <div id="search-weather-content" style="width: 50%;">
+            <div id="search-weather-1" class="weather-1">
+                <label id="entered-location">Current Weather</label><br>
+                <label id="time">Time</label>
+            </div>
+            <div id="search-weather-2" class="weather-2">
+                <div id="search-weather-2-1" class="weather-2-1">
+                    <img src="" alt="Current Weather Image" id="search-weather-image" class="weather-image">
+                    <div id="search-weather-temp" class="weather-temp" style="margin-bottom: 10px;">Temperature</div>
+                    <div>
+                        <div id="search-weather-des" class="weather-des">Mostly Cloudy</div>
+                        <div id="search-weather-feel-like" class="weather-feel-like">Feels like</div>
+                    </div>
+                </div>
+            </div>
+            <div id="search-weather-3" class="weather-3">
+                <div id="search-weather-wind" class="weather-wind">Wind</div>
+                <div id="search-weather-humidity" class="weather-humidity">Humidity</div>
+                <div id="search-weather-visibility" class="weather-visibility">Visibility</div>
+                <div id="search-weather-pressure" class="weather-pressure">Pressure</div>
+                <div id="search-weather-cloudiness" class="weather-cloudiness">Cloudy</div>
+            </div>
+        </div>
+        <div style="width: 20%;"></div>
+        <div id="search-weather-background" style="float: right; width: 30%;"></div>
+    </div>  
+
+    <div class="weather" style="display: none;" id="weather-forecast">
+        <table id="weather-table">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Icon</th>
+                    <th>Temperature (°C)</th>
+                    <th>Rain Description</th>
+                    <th>Wind Speed (m/s)</th>
+                    <th>Humidity (%)</th>
+                    <th>Visibility (m)</th>
+                    <th>Atmospheric Pressure (hPa)</th>
+                    <th>Cloudiness (%)</th>
+                </tr>
+            </thead>
+            <tbody id="weather-data">
+                <!-- Weather data will be inserted here -->
+
+            </tbody>
+        </table>
+    </div>
+
+    <div id="popupContainer" class="popup">
+        <div class="popup-content">
+            <span class="close-button" id="closePopupButton">&times;</span>
+            <h2>Subscribe</h2>
+            <p>Subscribe with your Email to receive daily weather forecast.</p>
+            <form method="post" action="subscribe.php" id="subscribe-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required><br>
+
+                <input type="submit" value="Subscribe">
+            </form>
+        </div>
+    </div>
+    <script>
+        function sendEmails() {
+          // Create an XMLHttpRequest object
+          var xhr = new XMLHttpRequest();
+        
+          // Specify the type of request (GET or POST) and the URL of the PHP script
+          xhr.open('GET', 'send_emails.php', true);
+        
+          // Set up a function to handle the response when the request is complete
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+              if (xhr.status === 200) {
+                // Request was successful, you can handle the response here if needed
+                alert('Emails sent successfully');
+              } else {
+                // Request encountered an error
+                alert('Error: ' + xhr.status);
+              }
+            }
+          };
+        
+          // Send the request to the PHP script
+          xhr.send();
+        }
+    </script>        
+    <script src="scripts/main.js" type="module" defer></script>
+</body>
