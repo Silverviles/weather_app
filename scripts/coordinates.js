@@ -1,4 +1,4 @@
-export const API_KEY = "c3710067bcc54ba34326e589bb751e30"; // openweathermap access key
+export const API_KEY = "YOUR_API_KEY"; // openweathermap access key
 
 // Function to get the coordinates according to the user entered city name
 export async function getCoordinates(cityName) {
