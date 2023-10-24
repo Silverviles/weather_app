@@ -1,4 +1,4 @@
-const accessKey = 'hnntSwJkdCFdymyu6wJj23wq-T0jsaA4BF52rzc7Ydg'; // unsplash access key
+const accessKey = "YOUR_API_KEY"; // unsplash access key
 
 async function getCityImage(cityName) {
     const unsplashAPI = `https://api.unsplash.com/photos/random?query=${cityName}&client_id=${accessKey}`;
